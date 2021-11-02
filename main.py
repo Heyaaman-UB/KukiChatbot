@@ -15,7 +15,7 @@ KUKI_KEY = os.environ.get("KUKI_KEY", None)
 
 
 kuki = Client(
-      "KukiBot",
+      "Kazuko",
       api_id=API_ID,
       api_hash=API_HASH,
       bot_token=TOKEN,
@@ -28,7 +28,7 @@ kuki = Client(
     & ~filters.edited,
     group=2,
 )
-async def kukiai(client: Client, message: Message):
+async def kazuko(client: Client, message: Message):
   msg = message.text
   chat_id = message.chat.id
 
@@ -41,11 +41,11 @@ async def kukiai(client: Client, message: Message):
 
 
 messageprivate = '''
-Hi, I'm Kuki Chat Bot
+Hi, I'm kazuko Group managing Bot
 '''
 
 messagegroup = '''
-Hi, I'm Kuki Chat Bot
+Hi, I'm kazuko Group managing Bot
 '''
 
 
@@ -60,7 +60,7 @@ async def start(_, message):
         await message.reply_text(messagegroup)
         return
     else:
-        buttons = [[InlineKeyboardButton("Github", url="https://github.com/MoeZilla/KukiChatBot"),
+        buttons = [[InlineKeyboardButton("Github", url="https://github.com/heyaaman/KazukoBot"),
                     ]]
         await message.reply_text(messageprivate, reply_markup=InlineKeyboardMarkup(buttons))
 
